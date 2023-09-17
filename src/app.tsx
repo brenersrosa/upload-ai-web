@@ -12,6 +12,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Slider } from '@/components/ui/slider'
+import { VideoInputForm } from './components/video-input-form'
 
 export function App() {
   return (
@@ -57,40 +58,7 @@ export function App() {
         </div>
 
         <aside className="w-80 space-y-6">
-        <form className="space-y-6">
-      <Label
-        htmlFor="video"
-        className="relative flex aspect-video w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-md border border-dashed text-sm text-muted-foreground transition-all hover:bg-primary/5"
-      >
-            <FileVideo className="h-4 w-4" />
-            Selecione um vídeo
-      </Label>
-
-      <input
-        type="file"
-        name="video"
-        id="video"
-        accept="video/mp4"
-        className="sr-only"
-      />
-
-      <Separator />
-
-      <div className="space-y-2">
-        <Label htmlFor="transcription_prompt">Prompt de transcrição</Label>
-
-        <Textarea
-          id="transcription_prompt"
-          className="h-20 resize-none leading-relaxed"
-          placeholder="Inclua palavras-chave mencionada no vídeo separadas por vírgula (,)"
-        />
-      </div>
-
-      <Button type="submit" className="w-full gap-2">
-        Carregar vídeo
-        <Upload className="h-4 w-4" />
-      </Button>
-    </form>
+          <VideoInputForm />
 
           <Separator />
 
@@ -155,4 +123,3 @@ export function App() {
     </div>
   )
 }
- 
